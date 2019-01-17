@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  color:#17252A;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  -webkit-animation: App-logo-spin infinite 20s linear;
+          animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
 
@@ -22,11 +24,139 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+nav{
+  color:#17252A;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em;
+  align-content: center;
+  align-items: center;
+  background: #3aafa9;
+}
+
+nav h1,
+nav h2{
+  margin:0;
+}
+
+nav h1{
+  font-size:200%;
+}
+
+nav h2{
+  font-size: 150%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin:0;
+  display: flex;
+}
+
+nav li{
+  margin:0 .5em;
+  padding:.5em;
+  border-bottom:solid 2px #2b7a78;
+}
+
+form{
+  padding: 1em 0;
+}
+
+input[type="text"]{
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: #DEF2F1;
+  padding: .5em;
+  border: none;
+  border:solid 2px #2b7a78;
+}
+
+button,
+input[type="submit"]{
+  background: #2b7a78;
+  border: none;
+  color:#Feffff;
+  padding: .5em 1em;
+  border-radius:5px;
+  margin: .5em;
+}
+
+button:hover,
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+
+.project-list {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.project{
+  background: #3AAfA9;
+}
+
+.project h3{
+  background: #2b7a78;
+  margin: 0;
+  padding: 1.35em 0;
+  color:#feffff;
+}
+
+.project ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 1em;
+}
+
+.project button{
+  background: #17252a;
+  color:#DEF2f1;
+}
+
+.project input {
+  border:solid 2px #17252a;
+}
+
+.project-main{
+  padding:1.35em;
+}
+
+.project .task {
+  background: #2b7a78;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: .5em;
+  margin: 1em 0em;
+}
+
+.project .task h4{
+  margin: 0;
+  padding: .5em;
+  color:#feffff;
+}
+
+@-webkit-keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }

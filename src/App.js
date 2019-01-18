@@ -31,7 +31,6 @@ class App extends Component {
 
     this.deleteProject = this.deleteProject.bind(this);
     this.updateProjectList = this.updateProjectList.bind(this);
-
   }
 
   handleNewProject(e){
@@ -92,18 +91,25 @@ class App extends Component {
         </form>
         <div className="project-list">
           {
-            this.state.projectList.map((project,i)=>{
-              return (
-                <Project 
-                  key={"project"+i}
-                  id={i}
-                  name={project.name}
-                  tasks={project.tasks}
-                  deleteProject={this.deleteProject}
-                  updateProjectList={this.updateProjectList}
-                />
-              )
-            })
+            this.state.projectList.length === 0?
+            <div>
+              <img src="./images/logo.png" alt="logo"></img>
+              <h4>There seems to be nothing here... :(</h4>
+              <h5>Try adding a new project to populate your CorkBoard!</h5>
+            </div>
+            :
+              this.state.projectList.map((project,i)=>{
+                return (
+                  <Project 
+                    key={"project"+i}
+                    id={i}
+                    name={project.name}
+                    tasks={project.tasks}
+                    deleteProject={this.deleteProject}
+                    updateProjectList={this.updateProjectList}
+                  />
+                )
+              })
           }
         </div>
       </div>

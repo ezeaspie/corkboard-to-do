@@ -22,6 +22,18 @@ class Project extends Component {
         this.props.updateProjectList(this.props.name,{name:this.props.name, tasks:taskList})
     }
 
+    toggleCompleteTask = (currentStatus,name) => {
+        let taskList = this.props.tasks;
+
+        taskList.forEach(element => {
+            if(element.name === name){
+                element.isComplete = !currentStatus;
+            }
+        });
+
+        this.props.updateProjectList(this.props.name,{name:this.props.name, tasks:taskList})
+    }
+
     createNewProjectTask = () => {
         this.setState({currentTaskInput:""})
         let taskFactory = (name) =>{
@@ -50,13 +62,16 @@ class Project extends Component {
                 value={this.state.currentTaskInput}
                 onChange={(e)=>this.handleInputChange(e)}
                 ></input>
-                <button onClick={this.createNewProjectTask}>Add Task</button>
+                <button className="button-image" onClick={this.createNewProjectTask}>
+                    <img alt="add" src="./images/add.png"/>
+                </button>
             </div>
             <ul>
             {
                 this.props.tasks.map((task, i)=>{
                 return(
                     <Task 
+                    toggleCompleteTask={this.toggleCompleteTask}
                     deleteTask={this.deleteTask}
                     key={this.props.id + i + task.name}
                     name={task.name}

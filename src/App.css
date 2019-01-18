@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
 .App {
   text-align: center;
   color:#17252A;
 }
 
+body{
+    background: #f2f2f2;
+}
 .App-logo {
   -webkit-animation: App-logo-spin infinite 20s linear;
           animation: App-logo-spin infinite 20s linear;
@@ -31,7 +35,7 @@ nav{
   padding: 1em 2em;
   align-content: center;
   align-items: center;
-  background: #3aafa9;
+  font-weight:bold;
 }
 
 nav h1,
@@ -80,11 +84,15 @@ input[type="submit"]{
   padding: .5em 1em;
   border-radius:5px;
   margin: .5em;
+  font-family: 'Roboto';
+  transition:ease .4s opacity;
 }
 
 button:hover,
 input[type="submit"]:hover{
   cursor: pointer;
+  opacity: .9;
+  transition:ease .4s opacity;
 }
 
 .project-list {
@@ -93,10 +101,12 @@ input[type="submit"]:hover{
   align-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  font-family: 'Roboto';
 }
 
 .project{
   background: #3AAfA9;
+  margin: 1.35em 0;
 }
 
 .project h3{
@@ -109,7 +119,7 @@ input[type="submit"]:hover{
 .project ul{
   list-style-type: none;
   margin: 0;
-  padding: 1em;
+  padding: 0;
 }
 
 .project button{
@@ -137,6 +147,43 @@ input[type="submit"]:hover{
   margin: 0;
   padding: .5em;
   color:#feffff;
+}
+
+.hidden-icon{
+  display: none;
+}
+
+.add-new-task button {
+  background:none;
+  padding: .5em;
+  margin: 0;
+}
+
+.add-new-task{
+  margin: 1em 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.task button{
+  background: none;
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.nav-main {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.nav-main img{
+  max-width:50px;
+  margin-left: 1em; 
 }
 
 @-webkit-keyframes App-logo-spin {

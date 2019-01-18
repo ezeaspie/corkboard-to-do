@@ -10,18 +10,18 @@ class App extends Component {
       currentProjectInput:"",
       projectList: [
         {
-          name:"Build CorkBoard",
+          name:"My To-Do List!",
           tasks:[
             {
-              name:"Make UI Great!",
+              name:"Brush Teeth",
+              isComplete:true,
+            },
+            {
+              name:"Finish Website",
               isComplete:false,
             },
             {
-              name:"Finish by Friday?",
-              isComplete:false,
-            },
-            {
-              name:"Place dummy data",
+              name:"Go for a 30 minute run",
               isComplete:true,
             }
           ]
@@ -31,6 +31,25 @@ class App extends Component {
 
     this.deleteProject = this.deleteProject.bind(this);
     this.updateProjectList = this.updateProjectList.bind(this);
+  }
+
+  componentWillMount(){
+    this.handleLocalStorage();
+  }
+
+  submitToLocalStorage = () => {
+    let projectData = JSON.stringify(this.state.projectList);
+    localStorage.setItem("projectData",projectData);
+  }
+
+  handleLocalStorage = () => {
+    let data = JSON.parse(localStorage.getItem("projectData"));
+    if(data === undefined || data=== null){
+      return;
+    }
+    else{
+      this.setState({projectList:data});
+    }
   }
 
   handleNewProject(e){
@@ -44,7 +63,7 @@ class App extends Component {
 
     projectList.unshift(newProject);
 
-    this.setState({projectList, currentProjectInput:""});
+    this.setState({projectList, currentProjectInput:""},this.submitToLocalStorage);
   }
 
   handleInputChange(e){
@@ -57,7 +76,7 @@ class App extends Component {
     
     projectList.splice(projectList.findIndex(element=>element.name === projectName),1);
 
-    this.setState({projectList});
+    this.setState({projectList},this.submitToLocalStorage);
   }
 
   updateProjectList(projectName, updatedProject){
@@ -66,7 +85,7 @@ class App extends Component {
 
     projectList[index] = updatedProject;
 
-    this.setState({projectList})
+    this.setState({projectList},this.submitToLocalStorage)
 
 
   }

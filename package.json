@@ -1,5 +1,6 @@
 {
   "name": "corkboard",
+  "homepage" : "http://ezeaspie.github.io/corkboard-to-do/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

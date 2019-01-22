@@ -31,6 +31,7 @@ body{
 nav{
   color:#17252A;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1em 2em;
   align-content: center;
@@ -52,6 +53,7 @@ nav h2{
 }
 
 nav ul {
+  padding: 0;
   list-style-type: none;
   margin:0;
   display: flex;
@@ -185,7 +187,31 @@ input[type="submit"]:hover{
   max-width:50px;
   margin-left: 1em; 
 }
+ul a{
+  text-decoration: none;
+  color:inherit;
+}
 
+nav ul li{
+    transition:ease-in-out .3s opacity;
+}
+
+nav ul li:hover{
+  opacity: .7;
+  cursor: pointer;
+  transition:ease-in-out .3s opacity;
+}
+
+footer a {
+  color:#3AAfA9;
+    transition:ease-in-out .3s color;
+}
+
+footer a:hover{
+  color: #2b7a78;
+    transition:ease-in-out .3s color;
+
+}
 @-webkit-keyframes App-logo-spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -205,5 +231,11 @@ input[type="submit"]:hover{
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width:500px){
+  nav{
+    flex-direction: row;
   }
 }

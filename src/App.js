@@ -131,6 +131,9 @@ class App extends Component {
               })
           }
         </div>
+        <footer>
+          <p>Created by <a href="https://github.com/ezeaspie">Ezequiel Espinoza Diaz</a></p>
+        </footer>
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Navigation extends Component {
           <img src="./images/LogoNoShadow.png" alt="main-logo"/>
         </div>
         <ul>
-            <li><a href="https://ezeaspie.github.io/corkboard-to-do/">View code on Github</a></li>
+            <li><a href="https://github.com/ezeaspie/corkboard-to-do">View code on Github</a></li>
         </ul>
       </nav>
     );

@@ -112,7 +112,7 @@ class App extends Component {
           {
             this.state.projectList.length === 0?
             <div>
-              <img src="./images/logo.png" alt="logo"></img>
+              <img src="./images/Logo.png" alt="logo"></img>
               <h4>There seems to be nothing here... :(</h4>
               <h5>Try adding a new project to populate your CorkBoard!</h5>
             </div>
